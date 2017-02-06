@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "./node_modules/.bin/webpack -d",
     "lint": "./node_modules/.bin/eslint app/* server.js; exit 0",
-    "start": "nodemon server.js"
+    "start": "nodemon server.js",
+    "knex": "knex"
   },
   "keywords": [],
   "author": "Mrjadaml",
@@ -31,7 +32,9 @@
   },
   "dependencies": {
     "express": "^4.14.0",
+    "knex": "^0.12.6",
     "nodemon": "^1.11.0",
+    "pg": "^6.1.2",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "webpack": "^2.2.0",

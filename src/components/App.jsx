@@ -1,9 +1,13 @@
 import React from 'react';
+import Address from './Address';
 
 class App extends React.Component {
   render() {
     return (
-      <h1>App Component</h1>
+      <div>
+        <h1>App Component</h1>
+        <Address />
+      </div>
     )
   }
 }

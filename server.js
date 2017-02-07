@@ -7,8 +7,6 @@ const app = express();
 const port = process.env.PORT || 8000;
 const compiler = webpack(config);
 
-const knex = require('knex');
-
 app.use(require('webpack-dev-middleware')(compiler, {
   publicPath: config.output.publicPath,
 }));

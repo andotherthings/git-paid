@@ -1,19 +1,20 @@
 exports.up = (knex) => {
-  return knex.schema.createTable('job', (table) => {
+  return knex.schema.createTable('hq', (table) => {
     table.increments();
     table.integer('company_id')
       .notNullable()
       .references('id')
       .inTable('company')
       .onDelete('CASCADE');
-    table.string('title').notNullable();
-    table.string('description');
-    table.string('url');
-    table.integer('compensation').defaultTo(0);
+    table.integer('address_id')
+      .notNullable()
+      .references('id')
+      .inTable('address')
+      .onDelete('CASCADE');
     table.timestamps(true, true);
   });
 };
 
 exports.down = (knex) => {
-  return knex.schema.dropTable('job');
+  return knex.schema.dropTable('hq');
 };

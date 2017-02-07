@@ -6,6 +6,7 @@
   },
   "rules": {
     "react/jsx-curly-spacing": [2, "always"],
-    "react/prefer-stateless-function": [0]
-  }
+    "react/prefer-stateless-function": [0],
+    "arrow-body-style": ["error", "always"],
+  },
 }

@@ -10,7 +10,7 @@ exports.seed = function(knex) {
         job_id: 1,
         status: 'applied',
         role: 'Software Engineer',
-        rating: 9,
+        rating: 5,
         note: 'This job pays extremely well',
         created_at: new Date('2017-02-02 14:26:16 UTC'),
         updated_at: new Date('2017-02-02 14:26:16 UTC')
@@ -21,7 +21,7 @@ exports.seed = function(knex) {
         job_id: 2,
         status: 'have not applied',
         role: 'Front-end Engineer',
-        rating: 7,
+        rating: 4,
         note: 'The company culture seems like a great fit',
         created_at: new Date('2017-02-02 14:26:16 UTC'),
         updated_at: new Date('2017-02-02 14:26:16 UTC')
@@ -32,7 +32,7 @@ exports.seed = function(knex) {
         job_id: 1,
         status: 'applied',
         role: 'Software Engineer',
-        rating: 5,
+        rating: 4,
         note: 'This job pays extremely well',
         created_at: new Date('2017-02-02 14:26:16 UTC'),
         updated_at: new Date('2017-02-02 14:26:16 UTC')
@@ -43,7 +43,7 @@ exports.seed = function(knex) {
         job_id: 2,
         status: 'have not applied',
         role: 'Front-end Engineer',
-        rating: 4,
+        rating: 3,
         note: 'The company culture seems like a great fit',
         created_at: new Date('2017-02-02 14:26:16 UTC'),
         updated_at: new Date('2017-02-02 14:26:16 UTC')

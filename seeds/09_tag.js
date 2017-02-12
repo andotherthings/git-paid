@@ -28,6 +28,18 @@ exports.seed = function(knex) {
         created_at: new Date('2017-02-02 14:26:16 UTC'),
         updated_at: new Date('2017-02-02 14:26:16 UTC')
       },
+      {
+        id: 5,
+        name: 'Aerospace',
+        created_at: new Date('2017-02-02 14:26:16 UTC'),
+        updated_at: new Date('2017-02-02 14:26:16 UTC')
+      },
+      {
+        id: 6,
+        name: 'Enterprise Software',
+        created_at: new Date('2017-02-02 14:26:16 UTC'),
+        updated_at: new Date('2017-02-02 14:26:16 UTC')
+      }
     ]);
     })
     .then(() => {

@@ -46,6 +46,20 @@ exports.seed = function(knex) {
         created_at: new Date('2017-02-02 14:26:16 UTC'),
         updated_at: new Date('2017-02-02 14:26:16 UTC')
       },
+      {
+        id: 7,
+        application_id: 1,
+        tag_id: 5,
+        created_at: new Date('2017-02-02 14:26:16 UTC'),
+        updated_at: new Date('2017-02-02 14:26:16 UTC')
+      },
+      {
+        id: 8,
+        application_id: 2,
+        tag_id: 6,
+        created_at: new Date('2017-02-02 14:26:16 UTC'),
+        updated_at: new Date('2017-02-02 14:26:16 UTC')
+      },
     ]);
     })
     .then(() => {

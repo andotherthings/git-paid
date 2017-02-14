@@ -1,5 +1,6 @@
 import React from 'react';
 import JobForm from './JobForm';
+import StyleGuide from './StyleGuide';
 
 class App extends React.Component {
   render() {
@@ -7,6 +8,7 @@ class App extends React.Component {
       <div>
         <h1>App Component</h1>
         <JobForm />
+        <StyleGuide />
       </div>
     );
   }

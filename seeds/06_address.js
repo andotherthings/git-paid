@@ -1,7 +1,6 @@
 /* eslint-disable camelcase, max-len */
-'use strict';
 
-exports.seed = function(knex) {
+exports.seed = knex => {
   return knex('address').del()
     .then(() => {
       return knex('address').insert([{
@@ -13,7 +12,7 @@ exports.seed = function(knex) {
         zip: '98052',
         country: 'USA',
         created_at: new Date('2017-02-02 14:26:16 UTC'),
-        updated_at: new Date('2017-02-02 14:26:16 UTC')
+        updated_at: new Date('2017-02-02 14:26:16 UTC'),
       }, {
         id: 2,
         street_1: '601 N 34th St',
@@ -23,12 +22,11 @@ exports.seed = function(knex) {
         zip: '98103',
         country: 'USA',
         created_at: new Date('2017-02-02 14:26:16 UTC'),
-        updated_at: new Date('2017-02-02 14:26:16 UTC')
+        updated_at: new Date('2017-02-02 14:26:16 UTC'),
       },
-    ]);
+      ]);
     })
     .then(() => {
-      return knex.raw("SELECT setval('address_id_seq', (SELECT MAX(id) FROM address));"
-    );
+      return knex.raw("SELECT setval('address_id_seq', (SELECT MAX(id) FROM address));");
     });
 };

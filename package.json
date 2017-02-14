@@ -6,9 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "./node_modules/.bin/webpack -d",
-    "lint": "./node_modules/.bin/eslint app/* server.js; exit 0",
+    "lint": "./node_modules/.bin/eslint --ignore-path .gitignore .",
     "start": "nodemon server.js",
-    "knex": "knex"
+    "knex": "./node_modules/.bin/knex"
   },
   "keywords": [],
   "author": "Mrjadaml",
@@ -31,6 +31,7 @@
     "style-loader": "^0.13.1"
   },
   "dependencies": {
+    "eslint-config-airbnb": "^14.1.0",
     "express": "^4.14.0",
     "knex": "^0.12.6",
     "nodemon": "^1.11.0",

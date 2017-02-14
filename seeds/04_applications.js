@@ -1,7 +1,6 @@
 /* eslint-disable camelcase, max-len */
-'use strict';
 
-exports.seed = function(knex) {
+exports.seed = knex => {
   return knex('application').del()
     .then(() => {
       return knex('application').insert([{
@@ -13,18 +12,18 @@ exports.seed = function(knex) {
         rating: 5,
         note: 'This job pays extremely well',
         created_at: new Date('2017-02-02 14:26:16 UTC'),
-        updated_at: new Date('2017-02-02 14:26:16 UTC')
+        updated_at: new Date('2017-02-02 14:26:16 UTC'),
       },
       {
         id: 2,
         user_id: 1,
         job_id: 2,
         status: 'have not applied',
-        role: 'Front-end Engineer',
+        role: 'Android Engineer',
         rating: 4,
-        note: 'The company culture seems like a great fit',
+        note: 'I really like this company and think they are doing awesome things',
         created_at: new Date('2017-02-02 14:26:16 UTC'),
-        updated_at: new Date('2017-02-02 14:26:16 UTC')
+        updated_at: new Date('2017-02-02 14:26:16 UTC'),
       },
       {
         id: 3,
@@ -33,25 +32,24 @@ exports.seed = function(knex) {
         status: 'applied',
         role: 'Software Engineer',
         rating: 4,
-        note: 'This job pays extremely well',
+        note: 'I feel like this job would be challenging but I would learn a lot',
         created_at: new Date('2017-02-02 14:26:16 UTC'),
-        updated_at: new Date('2017-02-02 14:26:16 UTC')
+        updated_at: new Date('2017-02-02 14:26:16 UTC'),
       },
       {
         id: 4,
         user_id: 2,
         job_id: 2,
         status: 'have not applied',
-        role: 'Front-end Engineer',
+        role: 'Android Engineer',
         rating: 3,
         note: 'The company culture seems like a great fit',
         created_at: new Date('2017-02-02 14:26:16 UTC'),
-        updated_at: new Date('2017-02-02 14:26:16 UTC')
+        updated_at: new Date('2017-02-02 14:26:16 UTC'),
       },
-    ]);
+      ]);
     })
     .then(() => {
-      return knex.raw("SELECT setval('application_id_seq', (SELECT MAX(id) FROM application));"
-    );
+      return knex.raw("SELECT setval('application_id_seq', (SELECT MAX(id) FROM application));");
     });
 };

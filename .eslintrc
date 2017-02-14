@@ -4,7 +4,7 @@
     "document": true,
     "window": true
   },
-   "rules": {
+  "rules": {
     "react/jsx-curly-spacing": [2, "always"],
     "react/prefer-stateless-function": [0],
     "arrow-parens": ["error", "as-needed"],

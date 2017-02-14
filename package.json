@@ -6,9 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "./node_modules/.bin/webpack -d",
-    "lint": "./node_modules/.bin/eslint './src/**/*.jsx' server.js; exit 0",
+    "lint": "./node_modules/.bin/eslint --ignore-path .gitignore .",
     "start": "nodemon server.js",
-    "knex": "knex"
+    "knex": "./node_modules/.bin/knex"
   },
   "keywords": [],
   "author": "Mrjadaml",

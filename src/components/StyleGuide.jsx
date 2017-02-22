@@ -1,7 +1,12 @@
 import React from 'react';
 import ColorPalette from './ColorPalette';
 import NavBar from './NavBar';
-import LandingPages from './LandingPages';
+import Typography from './Typography';
+import Buttons from './Buttons';
+import Tags from './Tags';
+import InputFields from './InputFields';
+
+
 import Radium from 'radium';
 
 const styles = {
@@ -35,7 +40,11 @@ class StyleGuide extends React.Component {
 
         <ColorPalette />
         <NavBar />
-        <LandingPages />
+        <Typography />
+        <Buttons />
+        <Tags />
+        <InputFields />
+
       </div>
     );
   }

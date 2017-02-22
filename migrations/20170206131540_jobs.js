@@ -7,7 +7,7 @@ exports.up = (knex) => {
       .inTable('company')
       .onDelete('CASCADE');
     table.string('title').notNullable();
-    table.string('description');
+    table.text('description');
     table.string('url');
     table.integer('compensation').defaultTo(0);
     table.timestamps(true, true);

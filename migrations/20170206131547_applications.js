@@ -4,7 +4,7 @@ exports.up = (knex) => {
     table.integer('user_id')
       .notNullable()
       .references('id')
-      .inTable('user')
+      .inTable('users')
       .onDelete('CASCADE');
     table.integer('job_id')
       .notNullable()

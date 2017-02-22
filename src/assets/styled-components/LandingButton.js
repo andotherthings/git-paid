@@ -1,15 +1,17 @@
 import styled from 'styled-components';
 
-const Button = styled.button`
+const LandingButton = styled.button`
   color: ${props => props.theme.color};
   background: ${props => props.theme.background};
-  font-size: 1em;
-  margin: 1em;
-  padding: 0.25em 1em;
+  font-size: 20px;
+  ${''/* margin: 60px 0 40px 0; */}
+  padding: 10px;
   border: 2px solid ${props => props.theme.borderColor};
-  border-radius: 3px;
+  border-radius: 5px;
   width: 90%;
+  display:block;
+  margin: 50px auto;
 `;
 
 
-export default Button;
+export default LandingButton;

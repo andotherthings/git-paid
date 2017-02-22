@@ -8,7 +8,16 @@ html {
 
 *, *:before, *:after {
   box-sizing: inherit;
+  font-family: 'Open Sans', sans-serif;
 }
+
+h1 {
+  font-size: 100pt;
+  text-align: center;
+  color: #047251;
+}
+
+
 // =======================
 // VARIABLES
 // =======================
@@ -20,4 +29,3 @@ $error-color: red;
 
 $black: #000000;
 $white: #ffffff;
-

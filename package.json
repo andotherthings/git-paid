@@ -42,6 +42,7 @@
     "radium-grid": "^2.0.3",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
+    "react-styled-flexboxgrid": "^1.0.1",
     "styled-components": "^1.4.3",
     "webpack": "^2.2.0",
     "webpack-dev-middleware": "^1.9.0",

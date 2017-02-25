@@ -4,7 +4,7 @@ import Tag from './Tag';
 
 const styles = {
   headingContainer: {
-    padding: '40px 0 40px 0',
+    padding: '40px 0',
     background: 'white',
     fontSize: 20,
     letterSpacing: 1,

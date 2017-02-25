@@ -3,7 +3,7 @@ import Radium from 'radium';
 
 const styles = {
   headingContainer: {
-    padding: '40px 0 40px 50px',
+    padding: '40px 0',
     background: 'white',
     fontSize: 20,
     letterSpacing: .9,

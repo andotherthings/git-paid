@@ -1,9 +1,10 @@
 import React from 'react';
 import Radium from 'radium';
+import { Grid, Cell } from 'radium-grid';
 
 const styles = {
   headingContainer: {
-    padding: '40px 0 40px 50px',
+    padding: '40px 0',
     background: 'white',
     fontSize: 20,
     letterSpacing: 1,
@@ -54,28 +55,35 @@ class Buttons extends React.Component {
         </div>
 
         <div style={{display: 'flex', height: '300px'}}>
-          <div style={{width: '50%', padding: '100px 0', textAlign: 'center'}}>
-            <div style={{marginBottom: '20px', textAlign: 'center'}}>
-              <button style={styles.btn}>Default</button>
-              <button style={[styles.btn, styles.btnWarning]}>Warning</button>
-            </div>
-            <div style={{textAlign: 'center'}}>
-              <button style={[styles.btn, styles.btnInfo]}>Info</button>
-              <button style={[styles.btn, styles.btnSuccess]}>Success</button>
-            </div>
+          <Grid width='1/2'>
+            <Cell align='center'>
+              <div style={{padding: '100px 0'}}>
+                <div style={{marginBottom: '20px', textAlign: 'center'}}>
+                  <button style={styles.btn}>Default</button>
+                  <button style={[styles.btn, styles.btnWarning]}>Warning</button>
+                </div>
 
-          </div>
+                <div style={{textAlign: 'center'}}>
+                  <button style={[styles.btn, styles.btnInfo]}>Info</button>
+                  <button style={[styles.btn, styles.btnSuccess]}>Success</button>
+                </div>
+              </div>
+            </Cell>
 
-          <div style={{width: '50%', padding: '100px 0', textAlign: 'center', background: '#202121'}}>
-            <div style={{marginBottom: '20px', textAlign: 'center'}}>
-              <button style={styles.btn}>Default</button>
-              <button style={[styles.btn, styles.btnWarning]}>Warning</button>
-            </div>
-            <div style={{textAlign: 'center'}}>
-              <button style={[styles.btn, styles.btnInfo]}>Info</button>
-              <button style={[styles.btn, styles.btnSuccess]}>Success</button>
-            </div>
-          </div>
+            <Cell align='center'>
+              <div style={{width: '100%', padding: '100px 0', background: '#202121'}}>
+                <div style={{marginBottom: '20px', textAlign: 'center'}}>
+                  <button style={styles.btn}>Default</button>
+                  <button style={[styles.btn, styles.btnWarning]}>Warning</button>
+                </div>
+
+                <div style={{textAlign: 'center'}}>
+                  <button style={[styles.btn, styles.btnInfo]}>Info</button>
+                  <button style={[styles.btn, styles.btnSuccess]}>Success</button>
+                </div>
+              </div>
+            </Cell>
+          </Grid>
         </div>
       </section>
     );

@@ -1,5 +1,6 @@
 import React from 'react';
 import Radium from 'radium';
+import FormGroup from './FormGroup';
 
 const styles = {
   headingContainer: {
@@ -10,38 +11,6 @@ const styles = {
     letterSpacing: 1,
     color: '#454545',
     textAlign: 'center'
-  },
-
-  labelTitle: {
-    display: 'block',
-    paddingBottom: 5,
-    paddingLeft: 2,
-    fontSize: 14,
-    fontFamily: 'Poppins',
-    fontWeight: 100,
-    letterSpacing: 1,
-    color: 'white',
-    textTransform: 'uppercase',
-  },
-
-  inputStyle: {
-    width: 200,
-    height: 34,
-    background: 'transparent',
-    paddingLeft: 10,
-    border: '1px solid grey',
-    borderRadius: 0,
-    marginBottom: 10,
-    fontSize: 16,
-    fontWeight: 100,
-    letterSpacing: .7,
-    color: 'white',
-  },
-
-  inputContainer: {
-    position: 'relative',
-    marginBottom: 30,
-    marginLeft: 30,
   },
 }
 
@@ -55,30 +24,24 @@ class InputFields extends React.Component {
         </div>
 
         <div style={{background: '#1f1f1f', padding: '75px 20%', display: 'flex', flexWrap: 'wrap'}}>
-          <div style={styles.inputContainer}>
-            <label style={styles.labelTitle}>company name</label>
-              <input placeholder="Space X" onFocus={this.handleFocus} style={styles.inputStyle} type="text"
-            />
-          </div>
+          <FormGroup
+            type='text'
+            label='Company Name'
+            placeholder='Space X' />
 
-          <div style={styles.inputContainer}>
-            <label style={styles.labelTitle}>job title</label>
-            <input onFocus={this.handleFocus} style={styles.inputStyle} type="text"
-            />
-          </div>
+          <FormGroup
+            type='text'
+            label='Job Title'
+            placeholder='Rocket Scientist' />
 
+          <FormGroup
+            type='text'
+            label='Job URL'
+            placeholder='www.spacex.com/jobs/4242' />
 
-          <div style={styles.inputContainer}>
-            <label style={styles.labelTitle}>job url</label>
-            <input onFocus={this.handleFocus} style={styles.inputStyle} type="text"
-            />
-          </div>
-
-          <div style={styles.inputContainer}>
-            <label style={styles.labelTitle}>compensation</label>
-            <input onFocus={this.handleFocus} style={styles.inputStyle} type="text"
-            />
-          </div>
+          <FormGroup
+            type='number'
+            label='Compensation' />
         </div>
       </section>
     );

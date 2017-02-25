@@ -1,6 +1,7 @@
 import React from 'react';
 import Radium from 'radium';
 import { Grid, Cell } from 'radium-grid';
+import Button from './Button';
 
 const styles = {
   headingContainer: {
@@ -12,37 +13,6 @@ const styles = {
     fontWeight: 300,
     textAlign: 'center'
   },
-
-  btn: {
-    width: 110,
-    height: 40,
-    background: 'transparent',
-    border: '1px solid grey',
-    marginLeft: 20,
-    fontSize: 10,
-    fontWeight: 500,
-    letterSpacing: 3,
-    color: 'grey',
-    textTransform: 'uppercase',
-    letterSpacing: 1,
-    transition: '.3s ease-in-out',
-    cursor: 'pointer'
-  },
-
-  btnInfo: {
-    border: '1px solid #006699',
-    color: '#006699',
-  },
-
-  btnWarning: {
-    border: '1px solid #d03a37',
-    color: '#d03a37',
-  },
-
-  btnSuccess: {
-    border: '1px solid #37d087',
-    color: '#37d087',
-  }
 }
 
 @Radium
@@ -55,17 +25,17 @@ class Buttons extends React.Component {
         </div>
 
         <div style={{display: 'flex', height: '300px'}}>
-          <Grid width='1/2'>
-            <Cell align='center'>
+          <Grid width="1/2">
+            <Cell align="center">
               <div style={{padding: '100px 0'}}>
                 <div style={{marginBottom: '20px', textAlign: 'center'}}>
-                  <button style={styles.btn}>Default</button>
-                  <button style={[styles.btn, styles.btnWarning]}>Warning</button>
+                  <Button>Default</Button>
+                  <Button type="warning">Warning</Button>
                 </div>
 
                 <div style={{textAlign: 'center'}}>
-                  <button style={[styles.btn, styles.btnInfo]}>Info</button>
-                  <button style={[styles.btn, styles.btnSuccess]}>Success</button>
+                  <Button type='info'>Info</Button>
+                  <Button type="success">Success</Button>
                 </div>
               </div>
             </Cell>
@@ -73,13 +43,13 @@ class Buttons extends React.Component {
             <Cell align='center'>
               <div style={{width: '100%', padding: '100px 0', background: '#202121'}}>
                 <div style={{marginBottom: '20px', textAlign: 'center'}}>
-                  <button style={styles.btn}>Default</button>
-                  <button style={[styles.btn, styles.btnWarning]}>Warning</button>
+                  <Button>Default</Button>
+                  <Button type="warning">Warning</Button>
                 </div>
 
                 <div style={{textAlign: 'center'}}>
-                  <button style={[styles.btn, styles.btnInfo]}>Info</button>
-                  <button style={[styles.btn, styles.btnSuccess]}>Success</button>
+                  <Button type='info'>Info</Button>
+                  <Button type="success">Success</Button>
                 </div>
               </div>
             </Cell>

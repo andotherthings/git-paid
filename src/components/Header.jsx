@@ -1,14 +1,24 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-class Header extends React.Component {
-  render() {
-    return (
-      <header>
-        <nav>
+const Header = () => {
+  const { styles } = Header;
+
+  return (
+    <header style={styles.header}>
+      <nav>
+        <Link to="/">
           Git Paid
-        </nav>
-      </header>
-    )
+        </Link>
+      </nav>
+    </header>
+  )
+}
+
+Header.styles = {
+  header: {
+    backgroundColor: '#F5F5F5',
+    padding: 8,
   }
 }
 

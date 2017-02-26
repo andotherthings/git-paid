@@ -2,7 +2,7 @@ import React from 'react';
 import Radium from 'radium';
 import { Grid, Cell } from 'radium-grid';
 import StyleGuide from './StyleGuide';
-import JobForm from './JobForm';
+import Dashboard from './Dashboard';
 
 const styles = {
   base: {
@@ -17,8 +17,8 @@ class Main extends React.Component {
       <Grid width="1">
         <Cell align="center">
           <main style={styles.base}>
+            <Dashboard />
             <StyleGuide />
-            <JobForm />
           </main>
         </Cell>
       </Grid>

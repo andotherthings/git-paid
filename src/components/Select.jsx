@@ -2,13 +2,23 @@ import React from 'react';
 
 const Select = (props) => {
   const { styles } = Select;
+  const options = props.options.map((option, index) => {
+    return (
+      <option
+        key={index}
+        value={option}>
+        { option }
+      </option>
+    )
+  });
+
   return (
     <div style={styles.container}>
       <label style={styles.label}>
         {props.label}:
       </label>
-      <select style={styles.select}>
-        <option>hi</option>
+      <select defaultValue={props.options[0]} style={styles.select}>
+        { options }
       </select>
     </div>
   )

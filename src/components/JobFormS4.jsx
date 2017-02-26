@@ -2,6 +2,7 @@ import React from 'react';
 import { Grid, Cell } from 'radium-grid';
 import Button from './Button';
 import FormGroup from './FormGroup';
+import Select from './Select';
 
 class JobFormS4 extends React.Component {
   render() {
@@ -15,41 +16,37 @@ class JobFormS4 extends React.Component {
           <Grid width="1">
             <Cell>
               <label>Interactions:
-                <div>
-                  <select>
-                    <option>Choose Interaction Type</option>
-                    <option>Informational</option>
-                    <option>Applied</option>
-                    <option>Phone Screen</option>
-                    <option>In Person Interview</option>
-                    <option>Custom...</option>
-                  </select>
-                  <i>⊖</i>
-                </div>
+                <Grid width="1">
+                  <Cell>
+                    <Select
+                      label="interactions"
+                      options={[
+                        'Choose Interaction Type',
+                        'Informational',
+                        'Applied',
+                        'Phone Screen',
+                        'In Person Interview',
+                        'Custom...'
+                      ]}>
+                    </Select>
+                    <i>⊖</i>
+                  </Cell>
 
-                <div>
-                  <select>
-                    <option>Choose Interaction Type</option>
-                    <option>Informational</option>
-                    <option>Applied</option>
-                    <option>Phone Screen</option>
-                    <option>In Person Interview</option>
-                    <option>Custom...</option>
-                  </select>
-                  <i>⊖</i>
-                </div>
-
-                <div>
-                  <select>
-                    <option>Choose Interaction Type</option>
-                    <option>Informational</option>
-                    <option>Applied</option>
-                    <option>Phone Screen</option>
-                    <option>In Person Interview</option>
-                    <option>Custom...</option>
-                  </select>
-                  <i>⨁</i>
-                </div>
+                  <Cell>
+                    <Select
+                      label="interactions"
+                      options={[
+                        'Choose Interaction Type',
+                        'Informational',
+                        'Applied',
+                        'Phone Screen',
+                        'In Person Interview',
+                        'Custom...',
+                      ]}
+                    />
+                    <i>⨁</i>
+                  </Cell>
+                </Grid>
               </label>
             </Cell>
 

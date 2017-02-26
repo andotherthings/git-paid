@@ -33,15 +33,14 @@ class Address extends React.Component {
 
           <Cell>
             <Select
-
+              label="state"
+              options={[
+                'WA',
+                'CO',
+                'NY',
+                'IL'
+              ]}
             />
-            <label>State:
-              <select>
-                <option value="foo">Foo</option>
-                <option value="bar">Bar</option>
-                <option value="baz">Baz</option>
-              </select>
-            </label>
           </Cell>
 
           <Cell>

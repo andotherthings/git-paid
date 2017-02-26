@@ -1,13 +1,20 @@
 import React from 'react';
-import JobForm from './JobForm';
+import { StyleRoot } from 'radium';
+import { BrowserRouter } from 'react-router-dom';
+import Header from './Header';
+import Main from './Main';
+import Footer from './Footer';
 
 class App extends React.Component {
   render() {
     return (
-      <div>
-        <h1>App Component</h1>
-        <JobForm />
-      </div>
+      <BrowserRouter>
+        <StyleRoot>
+          <Header />
+          <Main />
+          <Footer />
+        </StyleRoot>
+      </BrowserRouter>
     );
   }
 }

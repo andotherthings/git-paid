@@ -1,38 +1,62 @@
 import React from 'react';
-import { Input, Select, Option, Label } from '../assets/styled-components/forms';
+import { Grid, Cell } from 'radium-grid';
+import FormGroup from './FormGroup';
+import Select from './Select';
+import Button from './Button';
 
 class Address extends React.Component {
   render() {
     return (
       <section>
-        <h3>Address Component</h3>
-        <Label fullwidth >Street 1:
-          <Input type="text" fullwidth />
-        </Label>
+        <h3>Address:</h3>
+        <Grid width="1/2">
+          <Cell width="1">
+            <FormGroup
+              type="text"
+              label="Street 1"
+              placeholder="888 Western Ave" />
+          </Cell>
 
-        <Label fullwidth >Street 2:
-          <Input type="text" fullwidth />
-        </Label>
+          <Cell width="1">
+            <FormGroup
+              type="text"
+              label="Street 2"
+              placeholder="Suite 4242" />
+          </Cell>
 
-        <Label>City:
-          <Input type="text" />
-        </Label>
+          <Cell>
+            <FormGroup
+              type="text"
+              label="City"
+              placeholder="Seattle" />
+          </Cell>
 
-        <Label>State:
-          <Select>
-            <Option value="foo">Foo</Option>
-            <Option value="bar">Bar</Option>
-            <Option value="baz">Baz</Option>
-          </Select>
-        </Label>
+          <Cell>
+            <Select
+              label="state"
+              options={[
+                'WA',
+                'CO',
+                'NY',
+                'IL'
+              ]}
+            />
+          </Cell>
 
-        <Label>Zip:
-          <Input type="text" />
-        </Label>
+          <Cell>
+            <FormGroup
+              type="text"
+              label="Zip"
+              placeholder="80111" />
+          </Cell>
 
-        <Label>Country:
-          <Input type="text" />
-        </Label>
+          <Cell>
+            <FormGroup
+              type="text"
+              label="Country"
+              placeholder="Murica" />
+          </Cell>
+        </Grid>
       </section>
     );
   }

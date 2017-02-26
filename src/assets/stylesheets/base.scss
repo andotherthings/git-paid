@@ -8,7 +8,9 @@ html {
 
 *, *:before, *:after {
   box-sizing: inherit;
+  font-family: 'Open Sans', sans-serif;
 }
+
 // =======================
 // VARIABLES
 // =======================
@@ -20,4 +22,3 @@ $error-color: red;
 
 $black: #000000;
 $white: #ffffff;
-

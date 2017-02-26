@@ -1,7 +1,7 @@
 import React from 'react';
 import { Grid, Cell } from 'radium-grid';
-import FormGroup from './FormGroup';
-import Select from './Select';
+import FormGroup from './../FormGroup';
+import Select from './../Select';
 
 const InputFields = () => {
   const { styles } = InputFields;

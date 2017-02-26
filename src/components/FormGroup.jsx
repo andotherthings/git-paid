@@ -18,7 +18,7 @@ const FormGroup = (props) => {
 FormGroup.styles = {
   inputContainer: {
     width: '100%',
-    padding: 10,
+    margin: '10px 10px 10px 0',
   },
 
   labelTitle: {

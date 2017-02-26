@@ -1,6 +1,8 @@
 import React from 'react';
+import { Grid, Cell } from 'radium-grid';
+import FormGroup from './FormGroup';
+import Button from './Button';
 import Address from './Address';
-import { Form, Input, Label } from '../assets/styled-components/forms';
 
 class JobFormS2 extends React.Component {
   render() {
@@ -10,16 +12,25 @@ class JobFormS2 extends React.Component {
         <div>
           ⊙====Ⓞ==--⊙----⊙----⊙
         </div>
-        <Form>
-          <Label fullwidth>Company Name:
-            <Input type="text" />
-          </Label>
-          <Address />
-          <div>
-            <button>Back</button>
-            <button>Next</button>
-          </div>
-        </Form>
+        <form>
+          <Grid width="1">
+            <Cell>
+              <FormGroup
+                type="text"
+                label="Company Name"
+                placeholder="Space X" />
+            </Cell>
+
+            <Cell>
+              <Address />
+            </Cell>
+
+            <Cell align="center">
+              <Button type="warning">Back</Button>
+              <Button type="info">Next</Button>
+            </Cell>
+          </Grid>
+        </form>
       </section>
     );
   }

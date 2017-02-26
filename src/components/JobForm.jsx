@@ -7,7 +7,7 @@ import JobFormS4 from './JobFormS4';
 class JobForm extends React.Component {
   render() {
     return (
-      <section>
+      <section style={{background: '#1f1f1f'}}>
         <JobFormS1 />
         <JobFormS2 />
         <JobFormS3 />

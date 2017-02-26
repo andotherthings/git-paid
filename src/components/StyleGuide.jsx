@@ -6,10 +6,25 @@ import Buttons from './Buttons';
 import Tags from './Tags';
 import InputFields from './InputFields';
 
+const StyleGuide = () => {
+  const { styles } = StyleGuide;
+  return (
+    <div style={styles.styleGuide}>
+      <div style={styles.guideHeader}>
+        <h1 style={styles.guideHeading}>Git Paid UI Style Guide</h1>
+      </div>
 
-import Radium from 'radium';
+      <ColorPalette />
+      <NavBar />
+      <Typography />
+      <Buttons />
+      <Tags />
+      <InputFields />
+    </div>
+  );
+}
 
-const styles = {
+StyleGuide.styles = {
   styleGuide: {
     fontFamily: 'Poppins',
     background: '#f5f5f5'
@@ -19,35 +34,13 @@ const styles = {
     height: 200,
     background: '#37d087',
     color: 'white',
-    fontSize: 60,
     textTransform: 'uppercase',
     textAlign: 'center'
   },
 
   guideHeading: {
     paddingTop: 75
-  }
-}
-
-@Radium
-class StyleGuide extends React.Component {
-  render() {
-    return (
-      <div style={styles.styleGuide}>
-        <div style={styles.guideHeader}>
-          <h1 style={styles.guideHeading}>Git Paid UI Style Guide</h1>
-        </div>
-
-        <ColorPalette />
-        <NavBar />
-        <Typography />
-        <Buttons />
-        <Tags />
-        <InputFields />
-
-      </div>
-    );
-  }
+  },
 }
 
 export default StyleGuide;

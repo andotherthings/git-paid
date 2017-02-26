@@ -1,4 +1,7 @@
 import React from 'react';
+import { Grid, Cell } from 'radium-grid';
+import Button from './Button';
+import FormGroup from './FormGroup';
 import { Form, Select, Option, Label } from '../assets/styled-components/forms';
 
 class JobFormS4 extends React.Component {
@@ -9,50 +12,54 @@ class JobFormS4 extends React.Component {
         <div>
           ⊙====⊙====⊙====Ⓞ===-⊙
         </div>
-        <Form>
-          <Label fullwidth>Interactions:
-            <div>
-              <Select>
-                <Option>Choose Interaction Type</Option>
-                <Option>Informational</Option>
-                <Option>Applied</Option>
-                <Option>Phone Screen</Option>
-                <Option>In Person Interview</Option>
-                <Option>Custom...</Option>
-              </Select>
-              <i>⊖</i>
-            </div>
+        <form>
+          <Grid width="1">
+            <Cell>
+              <Label fullwidth>Interactions:
+                <div>
+                  <Select>
+                    <Option>Choose Interaction Type</Option>
+                    <Option>Informational</Option>
+                    <Option>Applied</Option>
+                    <Option>Phone Screen</Option>
+                    <Option>In Person Interview</Option>
+                    <Option>Custom...</Option>
+                  </Select>
+                  <i>⊖</i>
+                </div>
 
-            <div>
-              <Select>
-                <Option>Choose Interaction Type</Option>
-                <Option>Informational</Option>
-                <Option>Applied</Option>
-                <Option>Phone Screen</Option>
-                <Option>In Person Interview</Option>
-                <Option>Custom...</Option>
-              </Select>
-              <i>⊖</i>
-            </div>
+                <div>
+                  <Select>
+                    <Option>Choose Interaction Type</Option>
+                    <Option>Informational</Option>
+                    <Option>Applied</Option>
+                    <Option>Phone Screen</Option>
+                    <Option>In Person Interview</Option>
+                    <Option>Custom...</Option>
+                  </Select>
+                  <i>⊖</i>
+                </div>
 
-            <div>
-              <Select>
-                <Option>Choose Interaction Type</Option>
-                <Option>Informational</Option>
-                <Option>Applied</Option>
-                <Option>Phone Screen</Option>
-                <Option>In Person Interview</Option>
-                <Option>Custom...</Option>
-              </Select>
-              <i>⨁</i>
-            </div>
-          </Label>
+                <div>
+                  <Select>
+                    <Option>Choose Interaction Type</Option>
+                    <Option>Informational</Option>
+                    <Option>Applied</Option>
+                    <Option>Phone Screen</Option>
+                    <Option>In Person Interview</Option>
+                    <Option>Custom...</Option>
+                  </Select>
+                  <i>⨁</i>
+                </div>
+              </Label>
+            </Cell>
 
-          <div>
-            <button>Back</button>
-            <button>Submit</button>
-          </div>
-        </Form>
+            <Cell align="center">
+              <Button>Back</Button>
+              <Button>Submit</Button>
+            </Cell>
+          </Grid>
+        </form>
       </section>
     );
   }

@@ -1,6 +1,8 @@
 import React from 'react';
+import { Grid, Cell } from 'radium-grid';
 import Address from './Address';
-import { Form, Input, Label } from '../assets/styled-components/forms';
+import Button from './Button';
+import FormGroup from './FormGroup';
 
 class JobFormS3 extends React.Component {
   render() {
@@ -10,34 +12,56 @@ class JobFormS3 extends React.Component {
         <div>
           ⊙====⊙====Ⓞ=---⊙----⊙
         </div>
-        <Form>
-          <Label fullwidth>Job Title:
-            <Input type="text" />
-          </Label>
+        <form>
+          <Grid width="1/3">
+            <Cell width="1">
+              <FormGroup
+                type="text"
+                label="Job Title"
+                placeholder="Rocket Scientist" />
+            </Cell>
 
-          <Label fullwidth>Job Description:
-            <Input type="textarea" />
-          </Label>
+            <Cell width="1">
+              <FormGroup
+                type="textarea"
+                label="Job Description"
+                placeholder="Ipsum Lorem" />
+            </Cell>
 
-          <Label fullwidth>Tech Stack:
-            <Input type="text" />
-          </Label>
+            <Cell width="1">
+              <FormGroup
+                type="text"
+                label="Tech Stack"
+                placeholder="[react] [js]" />
+            </Cell>
 
-          <Label>Industries:
-            <Input type="text" />
-          </Label>
+            <Cell width="2/3">
+              <FormGroup
+                type="text"
+                label="Industries"
+                placeholder="[space] [radness]" />
+            </Cell>
 
-          <Label>Compensation:
-            <Input type="text" />
-          </Label>
+            <Cell>
+              <FormGroup
+                type="number"
+                label="Compensation"
+                placeholder="60000" />
+            </Cell>
 
-          <Address />
+            <Cell width="1">
+              <Address />
+            </Cell>
 
-          <div>
-            <button>Back</button>
-            <button>Next</button>
-          </div>
-        </Form>
+            <Cell
+              width="1"
+              align="center"
+            >
+              <Button>Back</Button>
+              <Button>Next</Button>
+            </Cell>
+          </Grid>
+        </form>
       </section>
     );
   }

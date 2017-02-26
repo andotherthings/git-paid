@@ -1,9 +1,10 @@
 import React from 'react';
 import { Grid, Cell } from 'radium-grid';
+import { Link } from 'react-router-dom';
 import Button from './Button';
 import FormGroup from './FormGroup';
 
-const Dashboard= () => {
+const Dashboard = () => {
   const { styles } = Dashboard;
 
   return (
@@ -17,7 +18,9 @@ const Dashboard= () => {
         </Cell>
 
         <Cell align="right" width="3/4">
-          <Button type="info">Add new</Button>
+          <Link to='/new-job'>
+            <Button type="info">New Job</Button>
+          </Link>
         </Cell>
       </Grid>
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Grid, Cell } from 'radium-grid';
+import { Link } from 'react-router-dom';
 import Button from './Button';
 import FormGroup from './FormGroup';
 import Select from './Select';
@@ -51,8 +52,12 @@ class JobFormS4 extends React.Component {
             </Cell>
 
             <Cell align="center">
-              <Button type="warning">Back</Button>
-              <Button type="success">Submit</Button>
+              <Link to="/new-job/part3">
+                <Button type="warning">Back</Button>
+              </Link>
+              <Link to="/">
+                <Button type="success">Submit</Button>
+              </Link>
             </Cell>
           </Grid>
         </form>

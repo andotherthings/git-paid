@@ -1,6 +1,21 @@
 import React from 'react';
 
-const styles = {
+const FormGroup = (props) => {
+  const { styles } = FormGroup;
+  return (
+    <div style={styles.inputContainer}>
+      <label style={styles.labelTitle}>
+        {props.label}:
+      </label>
+      <input
+        type={props.type}
+        placeholder={props.placeholder}
+        style={styles.inputStyle} />
+    </div>
+  )
+}
+
+FormGroup.styles = {
   inputContainer: {
     width: '100%',
     padding: 10,
@@ -28,23 +43,6 @@ const styles = {
     letterSpacing: .4,
     color: 'white',
   },
-}
-
-class FormGroup extends React.Component {
-  render() {
-    return (
-      <div style={styles.inputContainer}>
-        <label style={styles.labelTitle}>
-          {this.props.label}:
-        </label>
-        <input
-          type={this.props.type}
-          placeholder={this.props.placeholder}
-          onFocus={this.handleFocus}
-          style={styles.inputStyle} />
-      </div>
-    )
-  }
 }
 
 export default FormGroup;

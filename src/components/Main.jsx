@@ -6,7 +6,7 @@ import JobForm from './JobForm';
 
 const styles = {
   base: {
-    width: '1024',
+    width: 1024,
   }
 }
 
@@ -17,7 +17,6 @@ class Main extends React.Component {
       <Grid width="1">
         <Cell align="center">
           <main style={styles.base}>
-            <h1>App Component</h1>
             <StyleGuide />
             <JobForm />
           </main>

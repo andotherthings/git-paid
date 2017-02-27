@@ -73,7 +73,7 @@ InputFields.styles = {
     letterSpacing: 1,
     color: '#454545',
     textAlign: 'center'
-  },
+  }
 }
 
 export default InputFields;

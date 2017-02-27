@@ -1,7 +1,24 @@
 import React from 'react';
 import Radium from 'radium';
 
-const styles = {
+const NavBar = () => {
+  const { styles } = NavBar;
+  return (
+    <section>
+      <div style={styles.headingContainer}>
+        <h2>Navbar</h2>
+      </div>
+
+      <div>
+        <nav style={styles.nav}>
+        </nav>
+      </div>
+
+    </section>
+  );
+}
+
+NavBar.styles = {
   headingContainer: {
     padding: '40px 0',
     background: 'white',
@@ -17,25 +34,6 @@ const styles = {
     height: 100,
     background: '#1f1f1f',
     marginBottom: 75
-  }
-}
-
-@Radium
-class NavBar extends React.Component {
-  render() {
-    return (
-      <section>
-        <div style={styles.headingContainer}>
-          <h2>Navbar</h2>
-        </div>
-
-        <div>
-          <nav style={styles.nav}>
-          </nav>
-        </div>
-
-      </section>
-    );
   }
 }
 

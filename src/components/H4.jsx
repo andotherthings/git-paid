@@ -1,13 +1,12 @@
 import React from 'react';
 import { Grid, Cell } from 'radium-grid';
 
-const H4 = () => {
+const H4 = (props) => {
   const { styles } = H4;
   return (
-    <div>
-      <h4 style={styles.h4}>Technology</h4>
-      <h4 style={styles.h4}>Industry</h4>
-    </div>
+    <h4 style={styles.h4}>
+      {props.children}
+    </h4>
   );
 }
 

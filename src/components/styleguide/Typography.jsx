@@ -1,10 +1,10 @@
 import React from 'react';
 import Radium from 'radium';
 import { Grid, Cell } from 'radium-grid';
-import H2 from './H2';
-import H3 from './H3';
-import H4 from './H4';
-import Label from './Label';
+import H2 from '../H2';
+import H3 from '../H3';
+import H4 from '../H4';
+import Label from '../Label';
 const TypographyComp = () => {
   const { styles } = TypographyComp;
 
@@ -15,35 +15,64 @@ const TypographyComp = () => {
       </div>
 
       <Grid align="center">
-        <Grid width="1" align="center" style={{background: '#37d087', padding: '20px 0', color: '#fff', borderBottom: '1px solid lightgrey'}}>
-          <Cell width="1/4">
+        <Grid width="1" style={{background: '#37d087', padding: '20px 0', color: '#fff', borderBottom: '1px solid lightgrey'}}>
+          <Cell width="1/4"   align="left" style={{marginLeft: '15px'}}>
             <h1>Main Heading</h1>
           </Cell>
-          <Cell width="1/4">
+          <Cell width="1/4"  align="left" style={{marginLeft: '10px'}}>
             <h1>Sub Heading</h1>
           </Cell>
-          <Cell width="1/4">
+          <Cell width="1/4" align="right">
             <h1>Dashboard Column Heading</h1>
           </Cell>
-          <Cell width="1/4">
+          <Cell width="1/4"  align="center" style={{marginLeft: '15px'}}>
             <h1>Input Label</h1>
           </Cell>
 
         </Grid>
         <Cell width="1/4" style={{marginTop: '20px'}}>
-          <H2 />
+          <Grid align="left" style={{marginLeft: '10px'}}>
+            <Cell width="1">
+              <H2>Technology</H2>
+            </Cell>
+            <Cell width="1">
+              <H2>Industry</H2>
+            </Cell>
+          </Grid>
+
         </Cell>
 
         <Cell width="1/4" style={{marginTop: '30px'}}>
-          <H3 />
+          <Grid align="left">
+            <Cell width="1">
+              <H3>Technology</H3>
+            </Cell>
+            <Cell width="1">
+              <H3>Industry</H3>
+            </Cell>
+          </Grid>
         </Cell>
 
         <Cell width="1/4" style={{marginTop: '30px'}}>
-          <H4 />
+          <Grid align="left" style={{marginLeft: '35px'}}>
+            <Cell width="1">
+              <H4>Technology</H4>
+            </Cell>
+            <Cell width="1">
+              <H4>Industry</H4>
+            </Cell>
+          </Grid>
         </Cell>
 
         <Cell width="1/4" style={{marginTop: '35px'}}>
-          <Label />
+          <Grid align="left" style={{marginRight: '-150px'}}>
+            <Cell width="1">
+              <Label>Technology</Label>
+            </Cell>
+            <Cell width="1">
+              <Label>Industry</Label>
+            </Cell>
+          </Grid>
         </Cell>
       </Grid>
     </section>

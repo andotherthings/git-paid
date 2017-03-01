@@ -5,52 +5,72 @@ import Address from './Address';
 import Button from './Button';
 import FormGroup from './FormGroup';
 
-const JobFormS3 = () => {
+const JobFormS3 = (props) => {
   return (
     <section>
       <h2 style={{color: 'white'}}>Job Info</h2>
+
       <div>
         ⊙====⊙====Ⓞ=---⊙----⊙
       </div>
+
       <form>
         <Grid width="1">
           <Cell>
             <FormGroup
+              name="job.title"
+              value={ props.job.title }
               type="text"
               label="Job Title"
-              placeholder="Rocket Scientist" />
+              placeholder="Rocket Scientist"
+              onChange={ props.updateState } />
           </Cell>
 
           <Cell>
             <FormGroup
+              name="job.description"
+              value={ props.job.description }
               type="textarea"
               label="Job Description"
-              placeholder="Ipsum Lorem" />
+              placeholder="Ipsum Lorem"
+              onChange={ props.updateState } />
           </Cell>
 
           <Cell>
             <FormGroup
+              name="job.techStack"
+              value={ props.job.techStack }
               type="text"
               label="Tech Stack"
-              placeholder="[react] [js]" />
+              placeholder="[react] [js]"
+              onChange={ props.updateState } />
           </Cell>
 
           <Cell width="2/3">
             <FormGroup
+              name="job.industries"
+              value={ props.job.industries }
               type="text"
               label="Industries"
-              placeholder="[space] [radness]" />
+              placeholder="[space] [radness]"
+              onChange={ props.updateState } />
           </Cell>
 
           <Cell width="1/3">
             <FormGroup
+              name="job.compensation"
+              value={ props.job.compensation }
               type="number"
               label="Compensation"
-              placeholder="60000" />
+              placeholder="60000"
+              onChange={ props.updateState } />
           </Cell>
 
           <Cell>
-            <Address />
+            <Address
+              addressType="jobAddress"
+              store={ props.jobAddress }
+              updateState={ props.updateState } />
           </Cell>
 
           <Cell align="center">

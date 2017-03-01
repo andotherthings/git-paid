@@ -5,19 +5,24 @@ const Select = (props) => {
   const options = props.options.map((option, index) => {
     return (
       <option
-        key={index}
-        value={option}>
+        key={ index }
+        value={ option }>
         { option }
       </option>
     )
   });
 
   return (
-    <div style={styles.container}>
-      <label style={styles.label}>
-        {props.label}:
+    <div style={ styles.container }>
+      <label style={ styles.label }>
+        { props.label }:
       </label>
-      <select defaultValue={props.options[0]} style={styles.select}>
+      <select
+        name={ props.name }
+        value={ props.value }
+        onChange={ props.update }
+        data-index={ props.index }
+        style={ styles.select }>
         { options }
       </select>
     </div>

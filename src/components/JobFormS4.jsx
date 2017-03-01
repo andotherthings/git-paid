@@ -5,47 +5,44 @@ import Button from './Button';
 import FormGroup from './FormGroup';
 import Select from './Select';
 
-const JobFormS4 = () => {
+const JobFormS4 = (props) => {
+  const interactions = props.interactions.map((interaction, index) => {
+
+    return (
+      <Cell
+        key={ index }>
+        <Select
+          value={ interaction }
+          options={[
+            'Choose Interaction Type',
+            'Informational',
+            'Applied',
+            'Phone Screen',
+            'In Person Interview',
+            'Custom...'
+          ]}
+          index={ index }
+          update={ props.updateInteractions } />
+        <i>⨁</i>
+        <i>⊖</i>
+      </Cell>
+    )
+  });
+
   return (
     <section>
       <h2 style={{color: 'white'}}>Company Info</h2>
+
       <div>
         ⊙====⊙====⊙====Ⓞ===-⊙
       </div>
+
       <form>
         <Grid width="1">
           <Cell>
             <label>Interactions:
               <Grid width="1">
-                <Cell>
-                  <Select
-                    label="interactions"
-                    options={[
-                      'Choose Interaction Type',
-                      'Informational',
-                      'Applied',
-                      'Phone Screen',
-                      'In Person Interview',
-                      'Custom...'
-                    ]}>
-                  </Select>
-                  <i>⊖</i>
-                </Cell>
-
-                <Cell>
-                  <Select
-                    label="interactions"
-                    options={[
-                      'Choose Interaction Type',
-                      'Informational',
-                      'Applied',
-                      'Phone Screen',
-                      'In Person Interview',
-                      'Custom...',
-                    ]}
-                  />
-                  <i>⨁</i>
-                </Cell>
+                { interactions }
               </Grid>
             </label>
           </Cell>

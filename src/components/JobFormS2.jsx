@@ -23,14 +23,14 @@ const JobFormS2 = (props) => {
               type="text"
               label="Company Name"
               placeholder="Space X"
-              onChange={ props.updateState } />
+              onChange={ props.handleUpdate } />
           </Cell>
 
           <Cell>
             <Address
               addressType="companyAddress"
               store={ props.companyAddress }
-              updateState={ props.updateState } />
+              handleUpdate={ props.handleUpdate } />
           </Cell>
 
           <Cell align="center">

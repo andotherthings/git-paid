@@ -23,7 +23,7 @@ const JobFormS3 = (props) => {
               type="text"
               label="Job Title"
               placeholder="Rocket Scientist"
-              onChange={ props.updateState } />
+              onChange={ props.handleUpdate } />
           </Cell>
 
           <Cell>
@@ -33,7 +33,7 @@ const JobFormS3 = (props) => {
               type="textarea"
               label="Job Description"
               placeholder="Ipsum Lorem"
-              onChange={ props.updateState } />
+              onChange={ props.handleUpdate } />
           </Cell>
 
           <Cell>
@@ -43,7 +43,7 @@ const JobFormS3 = (props) => {
               type="text"
               label="Tech Stack"
               placeholder="[react] [js]"
-              onChange={ props.updateState } />
+              onChange={ props.handleUpdate } />
           </Cell>
 
           <Cell width="2/3">
@@ -53,7 +53,7 @@ const JobFormS3 = (props) => {
               type="text"
               label="Industries"
               placeholder="[space] [radness]"
-              onChange={ props.updateState } />
+              onChange={ props.handleUpdate } />
           </Cell>
 
           <Cell width="1/3">
@@ -63,14 +63,14 @@ const JobFormS3 = (props) => {
               type="number"
               label="Compensation"
               placeholder="60000"
-              onChange={ props.updateState } />
+              onChange={ props.handleUpdate } />
           </Cell>
 
           <Cell>
             <Address
               addressType="jobAddress"
               store={ props.jobAddress }
-              updateState={ props.updateState } />
+              handleUpdate={ props.handleUpdate } />
           </Cell>
 
           <Cell align="center">

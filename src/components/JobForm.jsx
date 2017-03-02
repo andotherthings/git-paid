@@ -55,7 +55,7 @@ class JobForm extends React.Component {
     const val = e.target.value;
 
     const propState = { [field]: val };
-    const nextTableState= Object.assign({}, this.state[table], propState);
+    const nextTableState = Object.assign({}, this.state[table], propState);
     const nextState = Object.assign({}, this.state, { [table]: nextTableState });
 
     this.setState(nextState);
@@ -82,24 +82,24 @@ class JobForm extends React.Component {
         <Route exact path="/new-job" render={() => (
           <JobFormS1
             job={ this.state.job }
-            updateState={ this.updateState } />
+            handleUpdate={ this.updateState } />
         )} />
         <Route path="/new-job/part2" render={() => (
           <JobFormS2
             company={ this.state.company }
             companyAddress={ this.state.companyAddress }
-            updateState={ this.updateState } />
+            handleUpdate={ this.updateState } />
         )} />
         <Route path="/new-job/part3" render={() => (
           <JobFormS3
             job={ this.state.job }
             jobAddress={ this.state.jobAddress }
-            updateState={ this.updateState } />
+            handleUpdate={ this.updateState } />
         )} />
         <Route path="/new-job/part4" render={() => (
           <JobFormS4
             interactions={ this.state.interactions }
-            updateInteractions={ this.updateInteractions } />
+            handleUpdate={ this.updateInteractions } />
         )} />
       </section>
     );

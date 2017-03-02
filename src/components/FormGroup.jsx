@@ -1,7 +1,7 @@
 import React from 'react';
 
 const FormGroup = (props) => {
-  const { label } = props
+  const { label, ...rest } = props
   const { styles } = FormGroup;
 
   return (
@@ -10,7 +10,7 @@ const FormGroup = (props) => {
         { label }:
       </label>
       <input
-        { ...props }
+        { ...rest }
         style={ styles.inputStyle } />
     </div>
   )

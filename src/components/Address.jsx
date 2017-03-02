@@ -18,7 +18,7 @@ class Address extends React.Component {
               type="text"
               label="Street 1"
               placeholder="888 Western Ave"
-              onChange={ this.props.updateState } />
+              onChange={ this.props.handleUpdate } />
           </Cell>
 
           <Cell width="1">
@@ -28,7 +28,7 @@ class Address extends React.Component {
               type="text"
               label="Street 2"
               placeholder="Suite 4242"
-              onChange={ this.props.updateState } />
+              onChange={ this.props.handleUpdate } />
           </Cell>
 
           <Cell>
@@ -38,7 +38,7 @@ class Address extends React.Component {
               type="text"
               label="City"
               placeholder="Seattle"
-              onChange={ this.props.updateState } />
+              onChange={ this.props.handleUpdate } />
           </Cell>
 
           <Cell>
@@ -46,13 +46,13 @@ class Address extends React.Component {
               value={ this.props.store.state }
               name={ `${this.props.addressType}.state` }
               label="state"
-              options={[
+              data={[
                 'WA',
                 'CO',
                 'NY',
                 'IL'
               ]}
-              update={ this.props.updateState } />
+              onChange={ this.props.handleUpdate } />
           </Cell>
 
           <Cell>
@@ -62,7 +62,7 @@ class Address extends React.Component {
               type="number"
               label="Zip"
               placeholder="80111"
-              onChange={ this.props.updateState } />
+              onChange={ this.props.handleUpdate } />
           </Cell>
 
           <Cell>
@@ -72,7 +72,7 @@ class Address extends React.Component {
               type="text"
               label="Country"
               placeholder="Murica"
-              onChange={ this.props.updateState } />
+              onChange={ this.props.handleUpdate } />
           </Cell>
         </Grid>
       </section>

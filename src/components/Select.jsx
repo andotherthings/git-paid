@@ -2,7 +2,8 @@ import React from 'react';
 
 const Select = (props) => {
   const { styles } = Select;
-  const options = props.options.map((option, index) => {
+  const { label, ...rest } = props;
+  const options = props.data.map((option, index) => {
     return (
       <option
         key={ index }
@@ -15,13 +16,10 @@ const Select = (props) => {
   return (
     <div style={ styles.container }>
       <label style={ styles.label }>
-        { props.label }:
+        { label }:
       </label>
       <select
-        name={ props.name }
-        value={ props.value }
-        onChange={ props.update }
-        data-index={ props.index }
+        { ...rest }
         style={ styles.select }>
         { options }
       </select>

@@ -22,7 +22,7 @@ const JobFormS1 = (props) => {
               type="text"
               label="Job URL"
               placeholder="www.spacex.com/jobs/4242"
-              onChange={ props.updateState } />
+              onChange={ props.handleUpdate } />
           </Cell>
           <Cell align="center">
             <Link to="/new-job/part2">

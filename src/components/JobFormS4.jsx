@@ -13,7 +13,7 @@ const JobFormS4 = (props) => {
         key={ index }>
         <Select
           value={ interaction }
-          options={[
+          data={[
             'Choose Interaction Type',
             'Informational',
             'Applied',
@@ -21,8 +21,8 @@ const JobFormS4 = (props) => {
             'In Person Interview',
             'Custom...'
           ]}
-          index={ index }
-          update={ props.updateInteractions } />
+          data-index={ index }
+          onChange={ props.handleUpdate } />
         <i>⨁</i>
         <i>⊖</i>
       </Cell>

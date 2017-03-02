@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
+import axios from 'axios';
 import JobFormS1 from './JobFormS1';
 import JobFormS2 from './JobFormS2';
 import JobFormS3 from './JobFormS3';
@@ -45,6 +46,7 @@ class JobForm extends React.Component {
       ],
     }
 
+    this.handleSubmit = this.handleSubmit.bind(this);
     this.updateState = this.updateState.bind(this);
     this.updateInteractions = this.updateInteractions.bind(this);
   }
@@ -76,6 +78,16 @@ class JobForm extends React.Component {
     this.setState(nextState);
   }
 
+  handleSubmit() {
+    axios.post('SOME_ENDPOINT', this.state)
+      .then(res => {
+        console.log(res);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }
+
   render() {
     return (
       <section style={{background: '#1f1f1f', padding: 10}}>
@@ -99,7 +111,8 @@ class JobForm extends React.Component {
         <Route path="/new-job/part4" render={() => (
           <JobFormS4
             interactions={ this.state.interactions }
-            handleUpdate={ this.updateInteractions } />
+            handleUpdate={ this.updateInteractions }
+            handleSubmit={ this.handleSubmit } />
         )} />
       </section>
     );

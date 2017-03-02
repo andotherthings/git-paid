@@ -52,7 +52,11 @@ const JobFormS4 = (props) => {
               <Button type="warning">Back</Button>
             </Link>
             <Link to="/">
-              <Button type="success">Submit</Button>
+              <Button
+                type="success"
+                onClick={ props.handleSubmit } >
+                Submit
+              </Button>
             </Link>
           </Cell>
         </Grid>

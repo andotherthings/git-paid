@@ -2,22 +2,25 @@ import React from 'react';
 
 const Select = (props) => {
   const { styles } = Select;
-  const options = props.options.map((option, index) => {
+  const { label, ...rest } = props;
+  const options = props.data.map((option, index) => {
     return (
       <option
-        key={index}
-        value={option}>
+        key={ index }
+        value={ option }>
         { option }
       </option>
     )
   });
 
   return (
-    <div style={styles.container}>
-      <label style={styles.label}>
-        {props.label}:
+    <div style={ styles.container }>
+      <label style={ styles.label }>
+        { label }:
       </label>
-      <select defaultValue={props.options[0]} style={styles.select}>
+      <select
+        { ...rest }
+        style={ styles.select }>
         { options }
       </select>
     </div>

@@ -1,16 +1,17 @@
 import React from 'react';
 
 const FormGroup = (props) => {
+  const { label, ...rest } = props
   const { styles } = FormGroup;
+
   return (
-    <div style={styles.inputContainer}>
-      <label style={styles.labelTitle}>
-        {props.label}:
+    <div style={ styles.inputContainer }>
+      <label style={ styles.labelTitle }>
+        { label }:
       </label>
       <input
-        type={props.type}
-        placeholder={props.placeholder}
-        style={styles.inputStyle} />
+        { ...rest }
+        style={ styles.inputStyle } />
     </div>
   )
 }

@@ -45,7 +45,7 @@ const InputFields = () => {
         <Cell>
           <Select
             label="state"
-            options={[
+            data={[
               'WA',
               'CO',
               'NY',

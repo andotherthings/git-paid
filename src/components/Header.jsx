@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import StyledLink from './StyledLink';
+
 
 const Header = () => {
   const { styles } = Header;
@@ -7,9 +8,9 @@ const Header = () => {
   return (
     <header style={styles.header}>
       <nav>
-        <Link to="/">
+        <StyledLink to="/">
           Git Paid
-        </Link>
+        </StyledLink>
       </nav>
     </header>
   )

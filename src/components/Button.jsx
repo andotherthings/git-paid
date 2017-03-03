@@ -5,6 +5,7 @@ const ButtonComp = (props) => {
   const { styles } = ButtonComp;
   return (
     <button
+      onClick={ props.onClick }
       style={[
         styles.base,
         props.type && styles[props.type],

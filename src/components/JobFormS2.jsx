@@ -5,24 +5,32 @@ import FormGroup from './FormGroup';
 import Button from './Button';
 import Address from './Address';
 
-const JobFormS2 = () => {
+const JobFormS2 = (props) => {
   return (
     <section>
       <h2 style={{color: 'white'}}>Company Info</h2>
+
       <div>
         ⊙====Ⓞ==--⊙----⊙----⊙
       </div>
+
       <form>
         <Grid width="1">
           <Cell>
             <FormGroup
+              name="company.name"
+              value={ props.company.name }
               type="text"
               label="Company Name"
-              placeholder="Space X" />
+              placeholder="Space X"
+              onChange={ props.handleUpdate } />
           </Cell>
 
           <Cell>
-            <Address />
+            <Address
+              addressType="companyAddress"
+              store={ props.companyAddress }
+              handleUpdate={ props.handleUpdate } />
           </Cell>
 
           <Cell align="center">

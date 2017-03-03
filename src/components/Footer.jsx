@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import StyledLink from './StyledLink';
 import StyleGuide from './styleguide/StyleGuide';
 
 const Footer = () => {
@@ -7,7 +7,7 @@ const Footer = () => {
 
   return (
     <footer style={styles.footer}>
-      <Link to="/styles">Style Guide</Link>
+      <StyledLink to="/styles">Style Guide</StyledLink>
     </footer>
   )
 }

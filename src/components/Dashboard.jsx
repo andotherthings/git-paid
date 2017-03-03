@@ -1,6 +1,7 @@
 import React from 'react';
 import { Grid, Cell } from 'radium-grid';
 import { Link } from 'react-router-dom';
+import StyledLink from './StyledLink';
 import axios from 'axios';
 import Button from './Button';
 import FormGroup from './FormGroup';
@@ -64,7 +65,7 @@ class Dashboard extends React.Component {
       });
 
       return (
-        <Link
+        <StyledLink
           to={`/job/${jobIndex}`}
           key={ jobIndex } >
 
@@ -85,7 +86,7 @@ class Dashboard extends React.Component {
               </Cell>
             </Grid>
           </article>
-        </Link>
+        </StyledLink>
       );
     });
 

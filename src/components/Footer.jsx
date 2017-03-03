@@ -1,21 +1,23 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import StyleGuide from './styleguide/StyleGuide';
 
 const Footer = () => {
   const { styles } = Footer;
 
   return (
-    <footer style={styles.footer}>
-      <Link to="/styles"
-            style={Object.assign(
-            {},
-            styles.link,
-      )}>
+
+    <footer style={ styles.footer }>
+      <Link
+        to="/styles"
+        style={ Object.assign(
+        {},
+        styles.link,
+      ) }
+      >
       Style Guide</Link>
     </footer>
-  )
-}
+  );
+};
 
 Footer.styles = {
   footer: {
@@ -31,7 +33,7 @@ Footer.styles = {
     letterSpacing: 1,
     textTransform: 'uppercase',
     textDecoration: 'none',
-  }
-}
+  },
+};
 
 export default Footer;

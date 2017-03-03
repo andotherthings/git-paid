@@ -1,7 +1,6 @@
 import React from 'react';
 import { Grid, Cell } from 'radium-grid';
 import { Link } from 'react-router-dom';
-import StyledLink from './StyledLink';
 import axios from 'axios';
 import Button from './Button';
 import FormGroup from './FormGroup';
@@ -65,9 +64,13 @@ class Dashboard extends React.Component {
       });
 
       return (
-        <StyledLink
+        <Link
           to={`/job/${jobIndex}`}
-          key={ jobIndex } >
+          key={ jobIndex }
+          style={Object.assign(
+            {},
+            styles.link,
+          )}>
 
           <article
             style={styles.tableRow}>
@@ -86,7 +89,7 @@ class Dashboard extends React.Component {
               </Cell>
             </Grid>
           </article>
-        </StyledLink>
+        </Link>
       );
     });
 
@@ -144,6 +147,17 @@ const styles = {
   tableRow: {
     padding: 8,
   },
+
+  link: {
+    color: 'black',
+    display: 'block',
+    margin: 0.5,
+    fontSize: 14,
+    fontFamily: 'Poppins',
+    letterSpacing: 1,
+    textTransform: 'uppercase',
+    textDecoration: 'none',
+  }
 }
 
 export default Dashboard;

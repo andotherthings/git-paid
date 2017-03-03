@@ -5,19 +5,21 @@ const Header = () => {
   const { styles } = Header;
 
   return (
-    <header style={styles.header}>
+    <header style={ styles.header }>
       <nav>
-        <Link to="/"
-        style={Object.assign(
-          {},
-          styles.link,
-        )}>
+        <Link
+          to="/"
+          style={ Object.assign(
+            {},
+            styles.link,
+          ) }
+        >
           Git Paid
         </Link>
       </nav>
     </header>
-  )
-}
+  );
+};
 
 Header.styles = {
   header: {
@@ -33,8 +35,7 @@ Header.styles = {
     letterSpacing: 1,
     textTransform: 'uppercase',
     textDecoration: 'none',
-  }
-
-}
+  },
+};
 
 export default Header;

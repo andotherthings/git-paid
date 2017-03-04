@@ -4,6 +4,7 @@ import { Route } from 'react-router-dom';
 import StyleGuide from './styleguide/StyleGuide';
 import Dashboard from './Dashboard';
 import JobForm from './JobForm';
+import JobProfile from './JobProfile';
 
 class Main extends React.Component {
   render() {
@@ -13,6 +14,7 @@ class Main extends React.Component {
           <main style={styles.base}>
             <Route exact path="/" component={Dashboard} />
             <Route path="/new-job" component={JobForm} />
+            <Route path="/job/:id" component={JobProfile} />
             <Route path="/styles" component={StyleGuide} />
           </main>
         </Cell>

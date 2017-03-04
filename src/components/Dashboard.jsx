@@ -45,7 +45,7 @@ class Dashboard extends React.Component {
   componentDidMount() {
     axios.get('SOME_ENDPOINT')
       .then(res => {
-        console.log('MISSING API ENDPOINT', res);
+        console.log('MISSING API ENDPOINT - Dashboard', res);
 
         //const nextState;
         //this.setState(nextState)

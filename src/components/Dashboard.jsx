@@ -9,6 +9,7 @@ import Tag from './Tag';
 class Dashboard extends React.Component {
   constructor() {
     super();
+    this.handleSearch = this.handleSearch.bind(this);
 
     this.state = {
       jobApps: [
@@ -38,7 +39,7 @@ class Dashboard extends React.Component {
       ],
     };
       search: '',
-    }
+    };
   }
 
   componentDidMount() {
@@ -55,21 +56,20 @@ class Dashboard extends React.Component {
   }
 
   handleSearch(event) {
-    let searchTerm = event.target.value;
+    const searchTerm = event.target.value;
 
-    this.setState({search: searchTerm})
+    this.setState({ search: searchTerm });
   }
 
   render() {
-    const jobApps = this.state.jobApps.filter((job) => {
-      let company = job.companyName.toLowerCase();
-      let title = job.jobTitle.toLowerCase();
-      let search = this.state.search;
+    const jobApps = this.state.jobApps.filter(job => {
+      const company = job.companyName.toLowerCase();
+      const title = job.jobTitle.toLowerCase();
+      const search = this.state.search;
 
       if (company.indexOf(search) !== -1 || title.indexOf(search) !== -1) {
         return job;
       }
-
     })
     .map((jobApp, jobIndex) => {
       const industries = jobApp.industries.map((industry, tagIndex) => {
@@ -122,8 +122,9 @@ class Dashboard extends React.Component {
               type="text"
               label="search"
               placeholder="what are you looking for?"
-              onChange={this.handleSearch.bind(this)}
+              onChange={ this.handleSearch }
             />
+
           </Cell>
 
           <Cell align="right" width="3/4">
@@ -170,7 +171,6 @@ const styles = {
   tableRow: {
     padding: 8,
   },
-
   link: {
     color: 'black',
     display: 'block',

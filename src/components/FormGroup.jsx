@@ -42,7 +42,7 @@ FormGroup.styles = {
     fontSize: 16,
     fontWeight: 100,
     letterSpacing: .4,
-    color: 'white',
+    color: 'black',
   },
 }
 

@@ -37,6 +37,8 @@ class Dashboard extends React.Component {
         },
       ],
     };
+      search: '',
+    }
   }
 
   componentDidMount() {
@@ -52,8 +54,24 @@ class Dashboard extends React.Component {
       });
   }
 
+  handleSearch(event) {
+    let searchTerm = event.target.value;
+
+    this.setState({search: searchTerm})
+  }
+
   render() {
-    const jobApps = this.state.jobApps.map((jobApp, jobIndex) => {
+    const jobApps = this.state.jobApps.filter((job) => {
+      let company = job.companyName.toLowerCase();
+      let title = job.jobTitle.toLowerCase();
+      let search = this.state.search;
+
+      if (company.indexOf(search) !== -1 || title.indexOf(search) !== -1) {
+        return job;
+      }
+
+    })
+    .map((jobApp, jobIndex) => {
       const industries = jobApp.industries.map((industry, tagIndex) => {
         return (
           <Tag
@@ -104,6 +122,7 @@ class Dashboard extends React.Component {
               type="text"
               label="search"
               placeholder="what are you looking for?"
+              onChange={this.handleSearch.bind(this)}
             />
           </Cell>
 

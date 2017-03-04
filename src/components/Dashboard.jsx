@@ -8,7 +8,7 @@ import Tag from './Tag';
 
 class Dashboard extends React.Component {
   constructor() {
-    super()
+    super();
 
     this.state = {
       jobApps: [
@@ -18,7 +18,7 @@ class Dashboard extends React.Component {
           industries: [
             'Space',
             'Rockets',
-            'Satellites'
+            'Satellites',
           ],
         }, {
           companyName: 'Planetary Resources',
@@ -34,9 +34,9 @@ class Dashboard extends React.Component {
             'SaaS',
             'Consultancy',
           ],
-        }
+        },
       ],
-    }
+    };
   }
 
   componentDidMount() {
@@ -57,19 +57,26 @@ class Dashboard extends React.Component {
       const industries = jobApp.industries.map((industry, tagIndex) => {
         return (
           <Tag
-            key={ tagIndex } >
-              { industry }
+            key={ tagIndex }
+          >
+            { industry }
           </Tag>
-        )
+        );
       });
 
       return (
         <Link
-          to={`/job/${jobIndex}`}
-          key={ jobIndex } >
+          to={ `/job/${jobIndex}` }
+          key={ jobIndex }
+          style={ Object.assign(
+            {},
+            styles.link,
+          ) }
+        >
 
           <article
-            style={styles.tableRow}>
+            style={ styles.tableRow }
+          >
 
             <Grid width="1/3">
               <Cell>
@@ -90,23 +97,24 @@ class Dashboard extends React.Component {
     });
 
     return (
-      <section style={styles.section}>
+      <section style={ styles.section }>
         <Grid width="1/4">
           <Cell align="left">
             <FormGroup
               type="text"
               label="search"
-              placeholder="what are you looking for?" />
+              placeholder="what are you looking for?"
+            />
           </Cell>
 
           <Cell align="right" width="3/4">
-            <Link to='/new-job'>
+            <Link to="/new-job">
               <Button type="info">New Job</Button>
             </Link>
           </Cell>
         </Grid>
 
-        <header style={styles.header}>
+        <header style={ styles.header }>
           <Grid width="1/3">
             <Cell>
               Company Name
@@ -125,7 +133,7 @@ class Dashboard extends React.Component {
         { jobApps }
 
       </section>
-    )
+    );
   }
 }
 
@@ -143,6 +151,17 @@ const styles = {
   tableRow: {
     padding: 8,
   },
-}
+
+  link: {
+    color: 'black',
+    display: 'block',
+    margin: 0.5,
+    fontSize: 14,
+    fontFamily: 'Poppins',
+    letterSpacing: 1,
+    textTransform: 'uppercase',
+    textDecoration: 'none',
+  },
+};
 
 export default Dashboard;

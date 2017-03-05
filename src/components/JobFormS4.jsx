@@ -6,8 +6,8 @@ import FormGroup from './FormGroup';
 import Select from './Select';
 
 const JobFormS4 = (props) => {
+  const { styles } = JobFormS4;
   const interactions = props.interactions.map((interaction, index) => {
-
     return (
       <Cell
         key={ index }>
@@ -31,7 +31,7 @@ const JobFormS4 = (props) => {
 
   return (
     <section>
-      <h2 style={{color: 'white'}}>Company Info</h2>
+      <h2 style={styles.whiteText}>Company Info</h2>
 
       <div>
         ⊙====⊙====⊙====Ⓞ===-⊙
@@ -40,7 +40,7 @@ const JobFormS4 = (props) => {
       <form>
         <Grid width="1">
           <Cell>
-            <label>Interactions:
+            <label style={styles.whiteText}>Interactions:
               <Grid width="1">
                 { interactions }
               </Grid>
@@ -63,6 +63,12 @@ const JobFormS4 = (props) => {
       </form>
     </section>
   );
+}
+
+JobFormS4.styles = {
+  whiteText: {
+    color: 'white'
+  }
 }
 
 export default JobFormS4;

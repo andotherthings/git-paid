@@ -37,10 +37,10 @@ class Dashboard extends React.Component {
           ],
         },
       ],
-    };
       search: '',
     };
   }
+
 
   componentDidMount() {
     axios.get('SOME_ENDPOINT')

@@ -1,7 +1,7 @@
 'use strict';
 
 const app = require('../../../server');
-const request = require('supertest')
+const request = require('supertest');
 const should = require('should');
 const knex = require('../../../knex');
 const series = require('es6-promise-series');
@@ -10,7 +10,7 @@ describe('Dashboard API routes:', () => {
   beforeEach(done => {
     series([
       knex('company')
-        .insert({id: 2, name: 'Space X', }),
+        .insert({id: 2, name: 'Space X'}),
       knex('job')
         .insert({id: 3, company_id: 2, title: 'Rocket Scientist'}),
       knex('tag')
@@ -20,7 +20,7 @@ describe('Dashboard API routes:', () => {
     ])
     .then(() => done())
     .catch(err => {
-      console.log('BeforeHook:', err)
+      console.log('BeforeHook:', err);
     });
   });
 

@@ -4,7 +4,6 @@ const webpack = require('webpack');
 const config = require('./webpack.config');
 
 const app = express();
-const port = process.env.PORT || 8000;
 const compiler = webpack(config);
 
 app.use(require('webpack-dev-middleware')(compiler, {
@@ -18,8 +17,4 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, './index.html'));
 });
 
-app.listen(port, () => {
-  /* eslint-disable no-console */
-
-  console.log(`Listening on port ${port}`);
-});
+module.exports = app;

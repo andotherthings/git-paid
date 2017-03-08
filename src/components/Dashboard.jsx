@@ -55,6 +55,10 @@ class Dashboard extends React.Component {
       });
   }
 
+  handleLogin() {
+    location.href="/auth/linkedin";
+  }
+
   handleSearch(event) {
     const searchTerm = event.target.value;
 
@@ -130,6 +134,11 @@ class Dashboard extends React.Component {
           <Cell align="right" width="3/4">
             <Link to="/new-job">
               <Button type="info">New Job</Button>
+            </Link>
+          </Cell>
+          <Cell align="right">
+            <Link to="/">
+              <Button onClick={this.handleLogin}>LinkedIn</Button>
             </Link>
           </Cell>
         </Grid>

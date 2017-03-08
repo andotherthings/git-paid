@@ -6,6 +6,9 @@ npm-debug.log*
 # Vim swap files
 .*.sw*
 
+# DS Stores
+.DS_Store
+
 # Runtime data
 pids
 *.pid

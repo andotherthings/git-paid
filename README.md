@@ -39,6 +39,13 @@ npm run knex migrate:latest
 npm run knex seed:run
 ```
 
+##### There are a few environment variables that you also need to configure.
+- Set `HOST=http://localhost:8000`
+- Create a LinkedIn OAuth application and store the client ID and SECRET as `LINKEDIN_CLIENT_ID=00000` and `LINKEDIN_CLIENT_SECRET=000000`
+- - When creating this application, set the "Authorized redirect URL" to be `http://localhost:8000/auth/linkedin/callback`
+- - set both the Default "Accept" Redirect URL and the Default "Cancel" Redirect URL to be: `http://localhost:8000/`
+- Set a `JWT_SECRET` variable using this command: `bash -c 'echo "JWT_SECRET="$(openssl rand -hex 64)' >> .env`
+
 <hr />
 
 ### Contributing

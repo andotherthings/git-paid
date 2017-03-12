@@ -44,10 +44,12 @@ passport.deserializeUser((user, done) => {
 const auth = require('./routes/auth');
 const job = require('./routes/job');
 const dashboard = require('./routes/dashboard');
+const form = require('./routes/form');
 
 app.use('/auth', auth);
 app.use('/api/v1/job', job);
-app.use('/api/v1/dashboard', dashboard)
+app.use('/api/v1/dashboard', dashboard);
+app.use('/api/v1/new-job', form);
 
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, './index.html'));

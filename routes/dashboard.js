@@ -1,8 +1,5 @@
-'use strict';
-
 const router = require('express').Router();
 const knex = require('../knex.js');
-const boom = require('boom');
 const { camelizeKeys, decamelizeKeys } = require('humps');
 const auth = require('../utils/authentication');
 
@@ -11,28 +8,28 @@ router.get('*', auth, (req, res, next) => {
 
   knex('application')
     .where('user_id', userId)
-    .then(rows => {
-      const applications = camelizeKeys(rows);
+    .then(rawApps => {
+      const applications = camelizeKeys(rawApps);
 
       Promise.all(applications.map(app => {
         return knex('job')
           .where('id', app.jobId)
           .first()
-          .then(row => {
-            const job = camelizeKeys(row);
+          .then(rawJob => {
+            const job = camelizeKeys(rawJob);
 
             return knex('company')
               .where('id', job.companyId)
               .first()
-              .then(row => {
-                const company = camelizeKeys(row);
+              .then(rawComp => {
+                const company = camelizeKeys(rawComp);
 
                 return knex('industry')
                   .innerJoin('job', 'job.id', 'industry.job_id')
                   .innerJoin('tag', 'tag.id', 'industry.tag_id')
                   .where('industry.job_id', job.id)
-                  .then(rows => {
-                    const tags = camelizeKeys(rows).map( e => e.name);
+                  .then(rawTags => {
+                    const tags = camelizeKeys(rawTags).map(e => e.name);
 
                     return {
                       companyName: company.name,

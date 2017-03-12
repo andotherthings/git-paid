@@ -1,14 +1,12 @@
-'use strict';
-
 const router = require('express').Router();
 const knex = require('../knex.js');
 const { camelizeKeys, decamelizeKeys } = require('humps');
 
 const passport = require('passport');
-const linkedInStrategy = require('passport-linkedin').Strategy;
+const LinkedInStrategy = require('passport-linkedin').Strategy;
 const jwt = require('jsonwebtoken');
 
-passport.use(new linkedInStrategy({
+passport.use(new LinkedInStrategy({
     consumerKey: process.env.LINKEDIN_CLIENT_ID,
     consumerSecret: process.env.LINKEDIN_CLIENT_SECRET,
     callbackURL: process.env.HOST + '/auth/linkedin/callback',
@@ -31,7 +29,9 @@ router.get('/linkedin/callback', passport.authenticate('linkedin', { failureRedi
   knex('users')
     .select(knex.raw('1=1'))
     .where('linkedin_id', linkedinId)
-    .then((result) => {
+    .then(result => {
+      let tempId = 0;
+
       if (!result.length) {
         const newUser = {
           email,
@@ -41,14 +41,18 @@ router.get('/linkedin/callback', passport.authenticate('linkedin', { failureRedi
         };
 
         knex('users').insert(decamelizeKeys(newUser), '*')
-          .then(users => users)
-          .catch((err) => {
+          .then(user => {
+            tempId = user.id;
+          })
+          .catch(err => {
             next(err);
           });
       }
 
-      const expiry = new Date(Date.now() + 1000 * 60 * 60 * 48);
-      const token = jwt.sign({ userId: authId }, process.env.JWT_SECRET, { expiresIn: '2d' });
+      const userId = tempId ? tempId : result.id;
+
+      const expiry = new Date((Date.now() + 1000) * 60 * 60 * 48);
+      const token = jwt.sign({ userId }, process.env.JWT_SECRET, { expiresIn: '2d' });
 
       res.cookie('token', token, {
         httpOnly: true,
@@ -57,7 +61,7 @@ router.get('/linkedin/callback', passport.authenticate('linkedin', { failureRedi
       });
       res.redirect('/');
     })
-    .catch((err) => {
+    .catch(err => {
       next(err);
     });
 });

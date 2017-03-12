@@ -6,9 +6,11 @@ import Button from './Button';
 
 class Address extends React.Component {
   render() {
+    const { styles } = Address;
+
     return (
       <section>
-        <h3>Address:</h3>
+        <h3 style={styles.whiteText}>Address:</h3>
 
         <Grid width="1/2">
           <Cell width="1">
@@ -79,5 +81,12 @@ class Address extends React.Component {
     );
   }
 }
+
+Address.styles = {
+  whiteText: {
+    color: 'white'
+  }
+}
+
 
 export default Address;
